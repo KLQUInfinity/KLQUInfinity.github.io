@@ -1,17 +1,18 @@
 function openPage(pageName, elmnt) {
-    var i, tabcontent, tablinks;
+    var i, tabcontent;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.color = "#aaaaaa";
-        tablinks[i].style.borderBottom = "3px solid transparent"
+    var nav = document.getElementById("navigation");
+    for (const child of nav.children) {
+        if (child.className == "activtablink") {
+            child.classList.replace("activtablink", "tablink")
+        }
     }
+
     document.getElementById(pageName).style.display = "block";
-    elmnt.style.color = "#dcdcdc";
-    elmnt.style.borderBottom = "3px solid #dcdcdc"
+    elmnt.classList.replace("tablink", "activtablink");
 }
 
 // Get the element with id="defaultOpen" and click on it
