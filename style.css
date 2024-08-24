@@ -89,6 +89,9 @@ h2[data-v-555694be] {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    position: fixed;
+    z-index: 999;
+    background-color: #434348;
 }
 
 .navigation {
